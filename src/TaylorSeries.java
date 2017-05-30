@@ -21,6 +21,7 @@ public class TaylorSeries {
 	public TaylorSeries(){
 		this.center = 0;
 		this.accuracy = 4;
+		this.steps = 0;
 	}
 	
 	/**
@@ -31,6 +32,7 @@ public class TaylorSeries {
 	public TaylorSeries(double accuracy){
 		this.center = 0;
 		this.accuracy = accuracy;
+		this.steps = 0;
 	}
 	
 	/**
@@ -42,6 +44,7 @@ public class TaylorSeries {
 	 */
 	public TaylorSeries(double center, int accuracy) throws Exception{
 		this.center = center;
+		this.steps = 0;
 		
 		//Following Algorithm converts int accuracy to a double accuracy.
 		if(accuracy > 0){
@@ -73,6 +76,7 @@ public class TaylorSeries {
 	public TaylorSeries(double center, double accuracy){
 		this.center = center;
 		this.accuracy = accuracy;
+		this.steps = 0;
 	}
 	
 	/**
@@ -90,16 +94,22 @@ public class TaylorSeries {
 		}
 	}
 	
-	public void geometricSeriesApproximationStep1(double x){
-		//create initial conditions
-		this.steps = 0;
-		this.lastApproximation = 1;
+	/**
+	 * This method will return an approximation of 1/(1-x).
+	 * @param x The value of x in 1/(1-x)
+	 */
+	public void geometricSeriesApproximation(double x){
+		//set the initial condition
+		if(this.steps == 0){
+			this.steps = 1;
+			this.lastApproximation = 1;
+		}
 		
 		//create the next addition
 		double nextApproximation = x;
 		
 		//find the next addition
-		for(int i = 0; i < steps; i++){
+		for(int i = 0; i < this.steps - 1; i++){
 			nextApproximation = nextApproximation*x;
 		}
 		
@@ -117,28 +127,21 @@ public class TaylorSeries {
 		
 	}
 	
-	public void geometricSeriesApproximation(double x){
-		
-		//create next addition
-		double nextApproximation = x;
-		
-		//find next addition
-		for(int i = 0; i < this.steps; i++){
-			nextApproximation = nextApproximation*x;
+	/**
+	 * This method raises a number to a power and returns the result as a double.
+	 * @param base The number to be raised to a power.
+	 * @param power The number of times to multiply the base by itself
+	 * @return The base multiplied by itself power times
+	 */
+	public static double power(double base, int power){
+		if(power == 0){
+			return 1;
 		}
-		
-		//add next addition
-		this.approximation = this.lastApproximation + nextApproximation;
-		this.steps++;
-		
-		//test accuracy and either return or continue with other method
-		if(!isAccurate()){
-			geometricSeriesApproximation(x);
+		double answer = base;
+		for(int i = 0; i < power-1; i++){
+			answer = answer * base;
 		}
-		else{
-			return;
-		}
-		
+		return answer;
 	}
 	
 }
