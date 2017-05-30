@@ -11,13 +11,18 @@ public class TaylorSeries {
 	private double accuracy;
 	private double center;
 	
+	/**
+	 * This constructs a McLauren Series (Taylor Series with a center of 0) with an accuracy
+	 * of 4 decimal places.
+	 */
 	public TaylorSeries(){
 		this.center = 0;
 		this.accuracy = 4;
 	}
 	
 	/**
-	 * This constructs a Taylor Series with a given center and 
+	 * This constructs a McLauren Series (Taylor Series with a center of 0) with a given accuracy 
+	 * as a double. 
 	 * @param accuracy
 	 */
 	public TaylorSeries(double accuracy){
@@ -31,7 +36,6 @@ public class TaylorSeries {
 	 * as a double value if you want a different accuracy level.
 	 * @param center The center of the Taylor Series. Must be greater than 0.
 	 * @param accuracy The chosen accuracy of the Taylor Series given as a number of decimal places.
-	 * @throws Exception 
 	 */
 	public TaylorSeries(double center, int accuracy) throws Exception{
 		this.center = center;
@@ -49,13 +53,11 @@ public class TaylorSeries {
 				this.accuracy = this.accuracy * 10;
 			}
 		}
-		//TODO finish this method.
-		
-		//throw an exception if accuracy is invalid.
-		if(accuracy < 1){
-			throw new Exception("Accuracy must be greater than 0 if input as an int value");
+		else{
+			this.accuracy = 1;
 		}
-		//TODO Check and see if this works correctly. If not, try again as a trycatch.
+		
+		//TODO Check and make sure that this doesn't cause any errors?
 		
 		
 	}
