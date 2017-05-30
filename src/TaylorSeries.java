@@ -105,6 +105,7 @@ public class TaylorSeries {
 		
 		//add next addition
 		this.approximation = this.lastApproximation + nextApproximation;
+		this.steps++;
 		
 		//test accuracy and either return or continue with other method
 		if(!isAccurate()){
@@ -128,6 +129,7 @@ public class TaylorSeries {
 		
 		//add next addition
 		this.approximation = this.lastApproximation + nextApproximation;
+		this.steps++;
 		
 		//test accuracy and either return or continue with other method
 		if(!isAccurate()){
