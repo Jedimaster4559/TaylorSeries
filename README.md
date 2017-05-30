@@ -10,7 +10,11 @@ Need to add taylor series:</br>
   -square root</br>
   -natural log</br>
   -all trig</br>
-Please add to this list as we come across more.
+Please add to this list as we come across more.</br>
+</br>
+Methods to add:</br>
+-Factorial
+
 
 # Current Developers
 Jedimaster4559

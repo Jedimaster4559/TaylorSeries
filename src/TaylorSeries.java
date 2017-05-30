@@ -12,6 +12,7 @@ public class TaylorSeries {
 	private double center;
 	private double lastApproximation;
 	private double approximation;
+	private int steps;
 	
 	/**
 	 * This constructs a McLauren Series (Taylor Series with a center of 0) with an accuracy
@@ -89,6 +90,53 @@ public class TaylorSeries {
 		}
 	}
 	
-	//TODO Add Taylor Aprroximations
+	public void geometricSeriesApproximationStep1(double x){
+		//create initial conditions
+		this.steps = 0;
+		this.lastApproximation = 1;
+		
+		//create the next addition
+		double nextApproximation = x;
+		
+		//find the next addition
+		for(int i = 0; i < steps; i++){
+			nextApproximation = nextApproximation*x;
+		}
+		
+		//add next addition
+		this.approximation = this.lastApproximation + nextApproximation;
+		
+		//test accuracy and either return or continue with other method
+		if(!isAccurate()){
+			geometricSeriesApproximation(x);
+		}
+		else{
+			return;
+		}
+		
+	}
+	
+	public void geometricSeriesApproximation(double x){
+		
+		//create next addition
+		double nextApproximation = x;
+		
+		//find next addition
+		for(int i = 0; i < this.steps; i++){
+			nextApproximation = nextApproximation*x;
+		}
+		
+		//add next addition
+		this.approximation = this.lastApproximation + nextApproximation;
+		
+		//test accuracy and either return or continue with other method
+		if(!isAccurate()){
+			geometricSeriesApproximation(x);
+		}
+		else{
+			return;
+		}
+		
+	}
 	
 }
