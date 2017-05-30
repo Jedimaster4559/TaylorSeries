@@ -10,6 +10,8 @@ public class TaylorSeries {
 	
 	private double accuracy;
 	private double center;
+	private double lastApproximation;
+	private double approximation;
 	
 	/**
 	 * This constructs a McLauren Series (Taylor Series with a center of 0) with an accuracy
@@ -71,5 +73,22 @@ public class TaylorSeries {
 		this.center = center;
 		this.accuracy = accuracy;
 	}
+	
+	/**
+	 * This method tests to see if we have reached the right level of accuracy
+	 * @return
+	 */
+	public boolean isAccurate(){
+		if(this.accuracy > 0 && 
+				(this.approximation-this.lastApproximation) < this.accuracy &&
+				(this.approximation-this.lastApproximation) > -this.accuracy){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	
+	//TODO Add Taylor Aprroximations
 	
 }
