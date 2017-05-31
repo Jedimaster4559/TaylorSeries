@@ -144,4 +144,34 @@ public class TaylorSeries {
 		return answer;
 	}
 	
+	/**
+	 * Calculates the factorial of an integer. Increments from 1, multiplying by each integer until it
+	 * reaches the input number
+	 * @param factorial The number we want to find the factorial of
+	 * @return The factorial of the number.
+	 */
+	public static int factorial(int factorial){
+		int answer = 1;
+		for(int i = 1; i <= factorial; i++){
+			answer = answer * i;
+		}
+		return answer;
+	}
+	
+	public int getStep(){
+		return this.steps;
+	}
+	
+	public double getAccuracy(){
+		return this.accuracy;
+	}
+	
+	public double getCenter(){
+		return this.center;
+	}
+	
+	public double getApproximation(){
+		return this.approximation;
+	}
+	
 }
