@@ -117,9 +117,12 @@ public class TaylorSeries {
 		double nextApproximation = x;
 		
 		//find the next addition
-		for(int i = 0; i < this.steps - 1; i++){
-			nextApproximation = nextApproximation*x;
-		}
+		//for(int i = 0; i < this.steps - 1; i++){
+		//	nextApproximation = nextApproximation*x;
+		//}
+		
+		//find the next addition
+		nextApproximation = power(nextApproximation, (this.steps-1));
 		
 		//add next addition
 		this.approximation = this.lastApproximation + nextApproximation;
