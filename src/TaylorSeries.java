@@ -63,8 +63,6 @@ public class TaylorSeries {
 			this.accuracy = 1;
 		}
 		
-		//TODO Check and make sure that this doesn't cause any errors?
-		
 		
 	}
 	
@@ -84,6 +82,7 @@ public class TaylorSeries {
 	 * @return
 	 */
 	public boolean isAccurate(){
+		/*
 		if(this.accuracy > 0 && 
 				(this.approximation-this.lastApproximation) < this.accuracy &&
 				(this.approximation-this.lastApproximation) > -this.accuracy){
@@ -91,6 +90,15 @@ public class TaylorSeries {
 		}
 		else{
 			return false;
+		}
+		*/
+		
+		double difference = this.approximation-this.lastApproximation;
+		if(difference/this.accuracy > 1 || difference < this.accuracy){
+			return false;
+		}
+		else{
+			return true;
 		}
 	}
 	
@@ -158,20 +166,46 @@ public class TaylorSeries {
 		return answer;
 	}
 	
+	/**
+	 * Getter method for steps
+	 * @return The number of steps to reach desired accuracy
+	 */
 	public int getStep(){
 		return this.steps;
 	}
 	
+	/**
+	 * Getter method for accuracy
+	 * @return The Accuracy level (as a decimal)
+	 */
 	public double getAccuracy(){
 		return this.accuracy;
 	}
 	
+	/**
+	 * Getter method for the center of Taylor Series
+	 * @return The center of the Taylor Series
+	 */
 	public double getCenter(){
 		return this.center;
 	}
 	
+	/**
+	 * Getter method for the approximation of the value
+	 * @return
+	 */
 	public double getApproximation(){
 		return this.approximation;
+	}
+	
+	/**
+	 * This method will reset the Taylor Polynomial. It sets all approximations
+	 * to 0 and the step counter to 0.
+	 */
+	public void reset(){
+		this.steps = 0;
+		this.approximation = 0;
+		this.lastApproximation = 0;
 	}
 	
 }

@@ -22,7 +22,8 @@ Please add to this list as we come across more.</br>
 - [x] power<br/>
 - [x] getter methods for private instance variables</br>
 - [ ] add constructor that takes in int as an accuracy level
-- [ ] reset
+- [x] reset
+- [ ] tester class
 
 ##### Methods to test logic and functionality
 - [ ] geometric series</br>
@@ -31,9 +32,10 @@ Please add to this list as we come across more.</br>
 ##### Problems to fix
 - [x] condense the geometric series methods down to one method.
 - [x] Add javadocs to the geometric series method(s)
-- [ ] Clean isAccurate() method to use modulus
+- [ ] Clean isAccurate() method to use division
 - [ ] Check the usage of the center variable. Should it even be used?
-- [ ] Add javadocs to all of the getter methods
+- [x] Add javadocs to all of the getter methods
+- [ ] Clean geometric series methods to involve the power method.
 
 ##### Random Ideas we might add
 -Graphing functionality</br>
