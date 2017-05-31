@@ -110,7 +110,7 @@ public class TaylorSeries {
 		//set the initial condition
 		if(this.steps == 0){
 			this.steps = 1;
-			this.lastApproximation = 1;
+			this.lastApproximation = 0;
 		}
 		else{
 			this.lastApproximation = this.approximation;
