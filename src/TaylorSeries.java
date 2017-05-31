@@ -93,8 +93,8 @@ public class TaylorSeries {
 		}
 		*/
 		
-		double difference = this.approximation-this.lastApproximation;
-		if(difference/this.accuracy > 1 || difference < this.accuracy){
+		double difference = (this.approximation-this.lastApproximation)/this.accuracy;
+		if(difference > 1 || difference < -1){
 			return false;
 		}
 		else{
