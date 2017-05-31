@@ -18,9 +18,9 @@ We are currently developing this project. When it will compile, we will modify t
 Please add to this list as we come across more.</br>
 
 ##### Methods to add
-- [ ] Factorial</br>
+- [x] Factorial</br>
 - [x] power<br/>
-- [ ] getter methods for private instance variables</br>
+- [x] getter methods for private instance variables</br>
 - [ ] add constructor that takes in int as an accuracy level
 - [ ] reset
 
@@ -33,6 +33,7 @@ Please add to this list as we come across more.</br>
 - [x] Add javadocs to the geometric series method(s)
 - [ ] Clean isAccurate() method to use modulus
 - [ ] Check the usage of the center variable. Should it even be used?
+- [ ] Add javadocs to all of the getter methods
 
 ##### Random Ideas we might add
 -Graphing functionality</br>
