@@ -79,7 +79,7 @@ public class TaylorSeries {
 	
 	/**
 	 * This method tests to see if we have reached the right level of accuracy
-	 * @return
+	 * @return A boolean to show if the right level of accuracy has been reached or not
 	 */
 	public boolean isAccurate(){
 		/*
@@ -172,6 +172,36 @@ public class TaylorSeries {
 		return answer;
 	}
 	
+	
+	/**
+	 * Setter method for steps
+	 * @param steps The number of steps to reach desired accuracy
+	 */
+	public void setStep(int steps){
+		this.steps = steps;
+	}
+	
+	/**Setter method for accuracy
+	 * @param accuracy The chosen accuracy of the Taylor Series given as a number of decimal places.
+	 */
+	public void setAccuracy(double accuracy){
+		this.accuracy = accuracy;
+	}
+	
+	/**Setter method for the center of Taylor Series
+	 * @param center The center of the Taylor Series. Must be greater than 0.
+	 */
+	public void setCenter(double center){
+		this.center = center;
+	}
+	
+	/**Setter method for the approximation of the value
+	 * @param approximation
+	 */
+	public void setApproximation(double approximation){
+		this.approximation = approximation;
+	}
+	
 	/**
 	 * Getter method for steps
 	 * @return The number of steps to reach desired accuracy
@@ -198,7 +228,7 @@ public class TaylorSeries {
 	
 	/**
 	 * Getter method for the approximation of the value
-	 * @return
+	 * @return 
 	 */
 	public double getApproximation(){
 		return this.approximation;
