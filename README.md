@@ -32,7 +32,7 @@ Please add to this list as we come across more.</br>
 ##### Problems to fix
 - [x] condense the geometric series methods down to one method.
 - [x] Add javadocs to the geometric series method(s)
-- [ ] Clean isAccurate() method to use division
+- [x] Clean isAccurate() method to use division
 - [ ] Check the usage of the center variable. Should it even be used?
 - [x] Add javadocs to all of the getter methods
 - [ ] Clean geometric series methods to involve the power method.

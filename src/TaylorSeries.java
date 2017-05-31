@@ -20,7 +20,7 @@ public class TaylorSeries {
 	 */
 	public TaylorSeries(){
 		this.center = 0;
-		this.accuracy = 4;
+		this.accuracy = .0001;
 		this.steps = 0;
 	}
 	
@@ -111,6 +111,9 @@ public class TaylorSeries {
 		if(this.steps == 0){
 			this.steps = 1;
 			this.lastApproximation = 1;
+		}
+		else{
+			this.lastApproximation = this.approximation;
 		}
 		
 		//create the next addition
