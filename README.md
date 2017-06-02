@@ -29,6 +29,7 @@ Please add to this list as we come across more.</br>
 ##### Methods to test logic and functionality
 - [ ] geometric series</br>
 - [ ] constructor involving double and int input
+- [ ] consider changing to allow for more decimal places through BigDecimal or float
 
 ##### Problems to fix
 - [x] condense the geometric series methods down to one method.
