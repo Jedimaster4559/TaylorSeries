@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.math.*;
 public class TaylorSeriesTester {
 	
 	private static List<String> passed = new ArrayList<String>();
@@ -18,13 +19,17 @@ public class TaylorSeriesTester {
 	public static void geometricTest(){
 		TaylorSeries taylor = new TaylorSeries();
 		taylor.geometricSeriesApproximation(.5);			//tests .5 to determine if approximation is accurate
-		if(taylor.getApproximation() != 1.99993896484375){	//result of approximation
-			System.out.println("Geometric Failed");
-			failed.add("Geometric Failed");
+		if(taylor.getApproximationDouble() != 1.99993896484375){	//result of approximation
+			System.out.println("Geometric Test 1 Failed");
+			failed.add("Geometric Test 1 Failed");
+		}
+		else if (taylor.getApproximationBigDecimal().equals(BigDecimal.valueOf(1.9999389484375))){
+			System.out.println("Geometric Test 2 Failed");
+			failed.add("Gemetric Test 2 Failed");
 		}
 		else{
-			System.out.println("Geometric Passed");
-			passed.add("Geometric Passed");
+			System.out.println("All Geometric Passed");
+			passed.add("All Geometric Passed");
 		}
 	}
 	
