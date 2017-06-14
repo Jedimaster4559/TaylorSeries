@@ -25,12 +25,12 @@ Please add to this list as we come across more.</br>
 - [ ] tester class
 - [ ] increased number of tests for each method (tester class) to ensure functionality (5+)
 - [ ] rounding class?
-- [ ] add new constructors
+- [ ] add new constructors for BigDecimal
 
 ##### Methods to test logic and functionality
 - [ ] geometric series</br>
 - [ ] constructor involving double and int input
-- [ ] consider changing to allow for more decimal places through BigDecimal or float
+- [x] consider changing to allow for more decimal places through BigDecimal or float
 
 ##### Problems to fix
 - [x] condense the geometric series methods down to one method.
