@@ -34,12 +34,62 @@ public class TaylorSeriesTester {
 	}
 	
 	public static void factorialTest(){
-		System.out.println("Factorial Tests");
-		System.out.println("1! = " + TaylorSeries.factorial(1));	
-		System.out.println("2! = " + TaylorSeries.factorial(2));
-		System.out.println("3! = " + TaylorSeries.factorial(3));
-		System.out.println("4! = " + TaylorSeries.factorial(4));
-		System.out.println("5! = " + TaylorSeries.factorial(5));
+		int zero = TaylorSeries.factorial(0);
+		int one = TaylorSeries.factorial(1);
+		int two = TaylorSeries.factorial(2);
+		int three = TaylorSeries.factorial(3);
+		int four = TaylorSeries.factorial(4);
+		
+		System.out.println("0! = " + zero);					//0! test
+		if(zero != 1){
+			System.out.println("Factorial Failed");
+			failed.add("Factorial Failed");
+		}
+		else{
+			System.out.println("Factorial Passed");
+			passed.add("Factorial Passed");
+		}
+		
+		System.out.println("1! = " + one);					//1! test
+		if(zero != 1){
+			System.out.println("Factorial Failed");
+			failed.add("Factorial Failed");
+		}
+		else{
+			System.out.println("Factorial Passed");
+			passed.add("Factorial Passed");
+		}
+		
+		System.out.println("2! = " + two);					//2! test
+		if(two != 1){
+			System.out.println("Factorial Failed");
+			failed.add("Factorial Failed");
+		}
+		else{
+			System.out.println("Factorial Passed");
+			passed.add("Factorial Passed");
+		}
+		
+		System.out.println("3! = " + three);				//3! test
+		if(three != 6){
+			System.out.println("Factorial Failed");
+			failed.add("Factorial Failed");
+		}
+		else{
+			System.out.println("Factorial Passed");
+			passed.add("Factorial Passed");
+		}
+		
+		System.out.println("4! = " + four);					//4! test
+		if(four != 24){
+			System.out.println("Factorial Failed");
+			failed.add("Factorial Failed");
+		}
+		else{
+			System.out.println("Factorial Passed");
+			passed.add("Factorial Passed");
+		}
+		
 	}
 	
 
