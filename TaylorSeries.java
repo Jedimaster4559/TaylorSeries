@@ -1,3 +1,4 @@
+import java.math.*;
 /**
  * This class implements a new Taylor Series to calculate accurate values for mathematical
  * equations.
@@ -8,10 +9,10 @@
  */
 public class TaylorSeries {
 	
-	private double accuracy;
+	private BigDecimal accuracy = new BigDecimal("0");
 	private double center;
-	private double lastApproximation;
-	private double approximation;
+	private BigDecimal lastApproximation = new BigDecimal("0");
+	private BigDecimal approximation = new BigDecimal("0");
 	private int steps;
 	
 	/**
@@ -20,7 +21,7 @@ public class TaylorSeries {
 	 */
 	public TaylorSeries(){
 		this.center = 0;
-		this.accuracy = .0001;
+		this.accuracy = BigDecimal.valueOf(.0001);
 		this.steps = 0;
 	}
 	
@@ -31,7 +32,7 @@ public class TaylorSeries {
 	 */
 	public TaylorSeries(double accuracy){
 		this.center = 0;
-		this.accuracy = accuracy;
+		this.accuracy = BigDecimal.valueOf(accuracy);
 		this.steps = 0;
 	}
 	
@@ -48,19 +49,19 @@ public class TaylorSeries {
 		
 		//Following Algorithm converts int accuracy to a double accuracy.
 		if(accuracy > 0){
-			this.accuracy = .1;
+			this.accuracy = BigDecimal.valueOf(.1);
 			for(int i = 0; i < accuracy-1; i++){
-				this.accuracy = this.accuracy * .1;
+				this.accuracy = this.accuracy.multiply(BigDecimal.valueOf(.1));
 			}
 		}
 		else if(accuracy < 0){
-			this.accuracy = 10;
+			this.accuracy = BigDecimal.valueOf(10);
 			for(int i = 0; i < accuracy-1; i++){
-				this.accuracy = this.accuracy * 10;
+				this.accuracy = this.accuracy.multiply(BigDecimal.valueOf(10));
 			}
 		}
 		else{
-			this.accuracy = 1;
+			this.accuracy = BigDecimal.valueOf(1);
 		}
 		
 		
@@ -73,7 +74,7 @@ public class TaylorSeries {
 	 */
 	public TaylorSeries(double center, double accuracy){
 		this.center = center;
-		this.accuracy = accuracy;
+		this.accuracy = BigDecimal.valueOf(accuracy);
 		this.steps = 0;
 	}
 	
@@ -93,7 +94,7 @@ public class TaylorSeries {
 		}
 		*/
 		
-		double difference = (this.approximation-this.lastApproximation)/this.accuracy;
+		BigDecimal difference = new BigDecimal(this.approximation.subtract(this.lastApproximation).divide(this.accuracy));
 		if(difference > 1 || difference < -1){
 			return false;
 		}
@@ -139,23 +140,6 @@ public class TaylorSeries {
 			return;
 		}
 		
-	}
-	
-	/**
-	 * This method raises a number to a power and returns the result as a double.
-	 * @param base The number to be raised to a power.
-	 * @param power The number of times to multiply the base by itself
-	 * @return The base multiplied by itself power times
-	 */
-	public static double power(double base, int power){
-		if(power == 0){
-			return 1;
-		}
-		double answer = base;
-		for(int i = 0; i < power-1; i++){
-			answer = answer * base;
-		}
-		return answer;
 	}
 	
 	/**
