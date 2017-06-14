@@ -1,6 +1,5 @@
 # TaylorSeries
-A Java package full of tools for creating Taylor Series Approximations. This project has been designed such that 
-it does not implement the Math class at all. It is designed in such a way that this class can be copy and pasted
+A Java package full of tools for creating Taylor Series Approximations. It is designed in such a way that this class can be copy and pasted
 into any java project folder. Then you can create a new TaylorSeries object and perform any desired operations!
 
 <hr>
@@ -26,6 +25,7 @@ Please add to this list as we come across more.</br>
 - [ ] tester class
 - [ ] increased number of tests for each method (tester class) to ensure functionality (5+)
 - [ ] rounding class?
+- [ ] add new constructors
 
 ##### Methods to test logic and functionality
 - [ ] geometric series</br>
