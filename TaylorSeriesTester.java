@@ -9,9 +9,10 @@ public class TaylorSeriesTester {
 	public static void main(String[] args) {
 		geometricTest();
 		System.out.println();
-		
-		printResults();
 		factorialTest();
+		System.out.println();
+		printResults();
+		
 		
 
 	}
@@ -42,52 +43,52 @@ public class TaylorSeriesTester {
 		
 		System.out.println("0! = " + zero);					//0! test
 		if(zero != 1){
-			System.out.println("Factorial Failed");
-			failed.add("Factorial Failed");
+			System.out.println("Factorial Test 1 Failed");
+			failed.add("Factorial Test 1 Failed");
 		}
 		else{
-			System.out.println("Factorial Passed");
-			passed.add("Factorial Passed");
+			System.out.println("Factorial Test 1 Passed");
+			passed.add("Factorial Test 1 Passed");
 		}
 		
 		System.out.println("1! = " + one);					//1! test
-		if(zero != 1){
-			System.out.println("Factorial Failed");
-			failed.add("Factorial Failed");
+		if(one != 1){
+			System.out.println("Factorial Test 2 Failed");
+			failed.add("Factorial Test 2 Failed");
 		}
 		else{
-			System.out.println("Factorial Passed");
-			passed.add("Factorial Passed");
+			System.out.println("Factorial Test 2 Passed");
+			passed.add("Factorial Test 2 Passed");
 		}
 		
 		System.out.println("2! = " + two);					//2! test
-		if(two != 1){
-			System.out.println("Factorial Failed");
-			failed.add("Factorial Failed");
+		if(two != 2){
+			System.out.println("Factorial Test 3 Failed");
+			failed.add("Factorial Test 3 Failed");
 		}
 		else{
-			System.out.println("Factorial Passed");
-			passed.add("Factorial Passed");
+			System.out.println("Factorial Test 3 Passed");
+			passed.add("Factorial Test 3 Passed");
 		}
 		
 		System.out.println("3! = " + three);				//3! test
 		if(three != 6){
-			System.out.println("Factorial Failed");
-			failed.add("Factorial Failed");
+			System.out.println("Factorial Test 4 Failed");
+			failed.add("Factorial Test 4 Failed");
 		}
 		else{
-			System.out.println("Factorial Passed");
-			passed.add("Factorial Passed");
+			System.out.println("Factorial Test 4 Passed");
+			passed.add("Factorial Test 4 Passed");
 		}
 		
 		System.out.println("4! = " + four);					//4! test
 		if(four != 24){
-			System.out.println("Factorial Failed");
-			failed.add("Factorial Failed");
+			System.out.println("Factorial Test 5 Failed");
+			failed.add("Factorial Test 5 Failed");
 		}
 		else{
-			System.out.println("Factorial Passed");
-			passed.add("Factorial Passed");
+			System.out.println("Factorial Test 5 Passed");
+			passed.add("Factorial Test 5 Passed");
 		}
 		
 	}
