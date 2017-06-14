@@ -26,14 +26,35 @@ public class TaylorSeriesTester {
 			System.out.println("Geometric Test 1 Failed");
 			failed.add("Geometric Test 1 Failed");
 		}
-		else if (taylor.getApproximationBigDecimal().equals(BigDecimal.valueOf(1.9999389484375))){
-			System.out.println("Geometric Test 2 Failed");
+		else{
+			System.out.println("Geometric Test 1 Passed");
+			passed.add("Geometric Test 1 Passed");
+		}
+		
+		if(!taylor.getApproximationBigDecimal().equals(new BigDecimal("1.99993896484375"))){
+			System.out.println("Geometric Test 2 Failed - ");
 			failed.add("Gemetric Test 2 Failed");
 		}
 		else{
-			System.out.println("All Geometric Passed");
-			passed.add("All Geometric Passed");
+			System.out.println("Geometric Test 2 Passed");
+			passed.add("Geometric Test 2 Passed");
 		}
+		
+		taylor.reset();
+		taylor.setAccuracy(100);
+		taylor.geometricSeriesApproximation(.25);
+		
+		if(!taylor.getApproximationBigDecimal().equals(new BigDecimal("1.3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333238084384059810418148684704307888253379007500431433444898739513064363947007771817027045998178318997529234745470552164313981621553143006770739496475549163229836207165218659561582628680024753997819531026181039123912341892719268798828125"))){
+			System.out.println(taylor.getApproximationBigDecimal());
+			System.out.println("Geometric Test 3 Failed");
+			failed.add("Geometric Test 3 Failed");
+		}
+		else{
+			System.out.println("GeometricTest 3 Passed");
+			passed.add("Geometric Test 3 Passed");
+		}
+		
+		//if(taylor.getApproximationBigDecimal().equals())
 	}
 	
 	public static void eTest(){
