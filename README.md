@@ -41,6 +41,7 @@ Please add to this list as we come across more.</br>
 - [x] Clean geometric series methods to involve the power method.
 - [ ] Add javadocs to Tester Methods
 - [ ] At least add userinput
+- [ ] modify testers so they decrease output messages when a whole series passes or fails
 
 ##### Random Ideas we might add
 -Graphing functionality</br>
