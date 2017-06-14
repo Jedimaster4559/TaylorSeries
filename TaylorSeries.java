@@ -94,8 +94,8 @@ public class TaylorSeries {
 		}
 		*/
 		
-		BigDecimal difference = new BigDecimal(this.approximation.subtract(this.lastApproximation).divide(this.accuracy));
-		if(difference > 1 || difference < -1){
+		BigDecimal difference = this.approximation.subtract(this.lastApproximation).divide(this.accuracy);
+		if(difference.compareTo(BigDecimal.valueOf(1)) > 0 || difference.compareTo(BigDecimal.valueOf(-1)) < 0){
 			return false;
 		}
 		else{
@@ -111,25 +111,21 @@ public class TaylorSeries {
 		//set the initial condition
 		if(this.steps == 0){
 			this.steps = 1;
-			this.lastApproximation = 0;
+			this.lastApproximation = BigDecimal.valueOf(0);
 		}
 		else{
 			this.lastApproximation = this.approximation;
 		}
 		
 		//create the next addition
-		double nextApproximation = x;
+		BigDecimal nextApproximation = BigDecimal.valueOf(x);
+		
 		
 		//find the next addition
-		//for(int i = 0; i < this.steps - 1; i++){
-		//	nextApproximation = nextApproximation*x;
-		//}
-		
-		//find the next addition
-		nextApproximation = power(nextApproximation, (this.steps-1));
+		nextApproximation = nextApproximation.pow(this.steps-1);
 		
 		//add next addition
-		this.approximation = this.lastApproximation + nextApproximation;
+		this.approximation = this.lastApproximation.add(nextApproximation);
 		this.steps++;
 		
 		//test accuracy and either return or continue with other method
@@ -169,7 +165,7 @@ public class TaylorSeries {
 	 * @param accuracy The chosen accuracy of the Taylor Series given as a number of decimal places.
 	 */
 	public void setAccuracy(double accuracy){
-		this.accuracy = accuracy;
+		this.accuracy = BigDecimal.valueOf(accuracy);
 	}
 	
 	/**Setter method for the center of Taylor Series
@@ -183,7 +179,7 @@ public class TaylorSeries {
 	 * @param approximation
 	 */
 	public void setApproximation(double approximation){
-		this.approximation = approximation;
+		this.approximation = BigDecimal.valueOf(approximation);
 	}
 	
 	/**
@@ -199,7 +195,7 @@ public class TaylorSeries {
 	 * @return The Accuracy level (as a decimal)
 	 */
 	public double getAccuracy(){
-		return this.accuracy;
+		return this.accuracy.doubleValue();
 	}
 	
 	/**
@@ -214,7 +210,11 @@ public class TaylorSeries {
 	 * Getter method for the approximation of the value
 	 * @return 
 	 */
-	public double getApproximation(){
+	public double getApproximationDouble(){
+		return this.approximation.doubleValue();
+	}
+	
+	public BigDecimal getApproximationBigDecimal(){
 		return this.approximation;
 	}
 	
@@ -224,8 +224,8 @@ public class TaylorSeries {
 	 */
 	public void reset(){
 		this.steps = 0;
-		this.approximation = 0;
-		this.lastApproximation = 0;
+		this.approximation = BigDecimal.valueOf(0);
+		this.lastApproximation = BigDecimal.valueOf(0);
 	}
 	
 }
