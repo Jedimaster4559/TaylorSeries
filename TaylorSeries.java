@@ -47,23 +47,7 @@ public class TaylorSeries {
 		this.center = center;
 		this.steps = 0;
 		
-		//Following Algorithm converts int accuracy to a double accuracy.
-		if(accuracy > 0){
-			this.accuracy = BigDecimal.valueOf(.1);
-			for(int i = 0; i < accuracy-1; i++){
-				this.accuracy = this.accuracy.multiply(BigDecimal.valueOf(.1));
-			}
-		}
-		else if(accuracy < 0){
-			this.accuracy = BigDecimal.valueOf(10);
-			for(int i = 0; i < accuracy-1; i++){
-				this.accuracy = this.accuracy.multiply(BigDecimal.valueOf(10));
-			}
-		}
-		else{
-			this.accuracy = BigDecimal.valueOf(1);
-		}
-		
+		setAccuracy(accuracy);
 		
 	}
 	
@@ -168,6 +152,25 @@ public class TaylorSeries {
 		this.accuracy = BigDecimal.valueOf(accuracy);
 	}
 	
+	public void setAccuracy(int accuracy){
+		//Following Algorithm converts int accuracy to a double accuracy.
+		if(accuracy > 0){
+			this.accuracy = BigDecimal.valueOf(.1);
+			for(int i = 0; i < accuracy-1; i++){
+				this.accuracy = this.accuracy.multiply(BigDecimal.valueOf(.1));
+			}
+		}
+		else if(accuracy < 0){
+			this.accuracy = BigDecimal.valueOf(10);
+			for(int i = 0; i < accuracy-1; i++){
+				this.accuracy = this.accuracy.multiply(BigDecimal.valueOf(10));
+			}
+		}
+		else{
+			this.accuracy = BigDecimal.valueOf(1);
+		}
+	}
+	
 	/**Setter method for the center of Taylor Series
 	 * @param center The center of the Taylor Series. Must be greater than 0.
 	 */
@@ -214,6 +217,10 @@ public class TaylorSeries {
 		return this.approximation.doubleValue();
 	}
 	
+	/**
+	 * getter method for the approximation that returns as a big decimal
+	 * @return
+	 */
 	public BigDecimal getApproximationBigDecimal(){
 		return this.approximation;
 	}
