@@ -9,6 +9,8 @@ public class TaylorSeriesTester {
 	public static void main(String[] args) {
 		geometricTest();
 		System.out.println();
+		eTest();
+		System.out.println();
 		factorialTest();
 		System.out.println();
 		printResults();
@@ -31,6 +33,20 @@ public class TaylorSeriesTester {
 		else{
 			System.out.println("All Geometric Passed");
 			passed.add("All Geometric Passed");
+		}
+	}
+	
+	public static void eTest(){
+		TaylorSeries taylor = new TaylorSeries();
+		taylor.eSeriesApproximation(.5);
+		if(taylor.getApproximationDouble() != 1.6487212707){
+			System.out.println("E Test 1 Failed");
+			failed.add("E Test 1 Failed");
+		}
+		else
+		{
+			System.out.println("E Test 1 Passed");
+			passed.add("E Test 1 Passed");
 		}
 	}
 	

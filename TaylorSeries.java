@@ -138,6 +138,38 @@ public class TaylorSeries {
 		
 	}
 	
+	public void eSeriesApproximation(double x){
+		//set initial condition
+		if (this.steps == 0){
+			this.steps = 1;
+			this.lastApproximation = BigDecimal.valueOf(0);
+		}
+		else{
+			this.lastApproximation = this.approximation;
+		}
+	
+		//create the next addition
+		BigDecimal nextApproximation = BigDecimal.valueOf(x);
+	
+		//find next addition
+		BigDecimal dividend = nextApproximation.pow(this.steps-1);
+		BigDecimal divisor = BigDecimal.valueOf(TaylorSeries.factorial(this.steps-1));
+		nextApproximation = dividend.divide(divisor);
+		
+		//add next addition
+		this.approximation = this.lastApproximation.add(nextApproximation);
+		this.steps++;
+	
+		//test accuracy and either return or continue with other method
+		if(!isAccurate()){
+			eSeriesApproximation(x);
+		}
+		else{
+			return;
+		}
+	
+	}
+	
 	/**
 	 * Calculates the factorial of an integer. Increments from 1, multiplying by each integer until it
 	 * reaches the input number
