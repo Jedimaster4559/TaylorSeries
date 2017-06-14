@@ -10,7 +10,7 @@ public class TaylorSeriesTester {
 		System.out.println();
 		
 		printResults();
-		
+		factorialTest();
 		
 
 	}
@@ -28,6 +28,16 @@ public class TaylorSeriesTester {
 		}
 	}
 	
+	public static void factorialTest(){
+		System.out.println("Factorial Tests");
+		System.out.println("1! = " + TaylorSeries.factorial(1));	
+		System.out.println("2! = " + TaylorSeries.factorial(2));
+		System.out.println("3! = " + TaylorSeries.factorial(3));
+		System.out.println("4! = " + TaylorSeries.factorial(4));
+		System.out.println("5! = " + TaylorSeries.factorial(5));
+	}
+	
+
 	public static void printResults(){
 		System.out.println("Tests that Passed");
 		System.out.println("-----------------");
