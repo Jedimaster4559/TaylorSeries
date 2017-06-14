@@ -25,6 +25,7 @@ Please add to this list as we come across more.</br>
 - [x] reset
 - [ ] tester class
 - [ ] increased number of tests for each method (tester class) to ensure functionality (5+)
+- [ ] rounding class?
 
 ##### Methods to test logic and functionality
 - [ ] geometric series</br>
@@ -39,6 +40,7 @@ Please add to this list as we come across more.</br>
 - [x] Add javadocs to all of the getter methods
 - [x] Clean geometric series methods to involve the power method.
 - [ ] Add javadocs to Tester Methods
+- [ ] At least add userinput
 
 ##### Random Ideas we might add
 -Graphing functionality</br>
